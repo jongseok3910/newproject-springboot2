@@ -1,12 +1,11 @@
 package com.web;
 
 import com.service.posts.PostsService;
+import com.web.dto.PostsResponseDto;
 import com.web.dto.PostsSaveRequestDto;
+import com.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -18,12 +17,12 @@ public class PostsApiController {
         return postsService.save(requestDto);
     }
 
-    @GetMapping("/api/v1/posts/{id}")
-    public Long update(@pathVariavle Long id, @RequestBody PostsUpdateRequestDto requestDto){
+    @PutMapping("/api/v1/posts/{id}")
+    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) throws IllegalAccessException {
         return postsService.update(id,requestDto);
     }
     @GetMapping("/api/v1/posts/{id}")
-    public PostsResponseDto findById(@pathVariable Long id){
+    public PostsResponseDto findById(@PathVariable Long id){
         return postsService.findById(id);
     }
 }
