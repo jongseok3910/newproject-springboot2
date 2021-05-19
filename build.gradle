@@ -24,7 +24,6 @@ repositories {
     maven { url 'https://repo.spring.io/snapshot' }
 }
 dependencies {
-    implementation 'android.arch.persistence.room:runtime:1.1.1'
     implementation 'junit:junit:4.13.1'
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.projectlombok:lombok')
@@ -36,5 +35,5 @@ dependencies {
     compile('org.springframework.session:spring-session-jdbc')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile("org.springframework.security:spring-security-test")
-    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+
 }
